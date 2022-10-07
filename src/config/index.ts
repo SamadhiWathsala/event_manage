@@ -11,8 +11,6 @@ const config = {
         options: {
             useNewUrlParser: true,
             keepAlive: true,
-            useFindAndModify: false,
-            useCreateIndex: true,
             useUnifiedTopology: true,
         },
         // Enable mongoose debug mode

@@ -20,7 +20,7 @@ const setupServer = async () => {
         }),
     });
 
-    // server.applyMiddleware({ app });
+    server.applyMiddleware({ app });
 
     await setupDatabase();
 
