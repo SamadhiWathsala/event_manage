@@ -1,0 +1,32 @@
+{
+  "name": "event_manage",
+  "version": "1.0.0",
+  "description": "graphQL backend for event management application",
+  "main": "index.js",
+  "author": "samadhi_wathsala",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "seed": "ts-node-dev src/db/seed.ts"
+  },
+  "dependencies": {
+    "@typegoose/typegoose": "^9.12.1",
+    "apollo-server-express": "^3.10.2",
+    "class-validator": "^0.13.2",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.1",
+    "graphql": "^15.0.0",
+    "reflect-metadata": "^0.1.13",
+    "type-graphql": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">= 10.15"
+  }
+}
