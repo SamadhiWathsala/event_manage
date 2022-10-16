@@ -1,6 +1,5 @@
-import { Resolver, Query, Arg, Mutation, Field, Int, InputType, FieldResolver, Root } from "type-graphql";
+import { Resolver, Query, Arg, Mutation, Field, Int, InputType, FieldResolver, Root, Subscription } from "type-graphql";
 import Events, { Event } from "../../models/event";
-import Users, { User } from "../../models/user";
 
 @InputType()
 class NewEventInput implements Partial<Event> {
@@ -20,8 +19,6 @@ class NewEventInput implements Partial<Event> {
     @Field()
     venue: String;
 
-    // @Field()
-    // createdBy: User;
 }
 
 @Resolver(() => Event)
@@ -49,4 +46,17 @@ export class EventResolver {
         const event = await Events.create(input);
         return event;
     }
+
+    // @Subscription({
+    //     topics: "POST_ADDED"
+    // })
+    // newEventNotification(
+    //     @Root() notificationPayload: Event,
+    // ): EventNotification {
+    //     return {
+    //         ...notificationPayload,
+    //         date: new Date(),
+    //     };
+    // }
 }
+
